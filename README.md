@@ -1,18 +1,18 @@
-#Encryptscript
+# Encryptscript
 
 A secure, encrypted Javascript format (almost)
 
-##Almost?
+## Almost?
 
 Thanks to modern browser inspectors (Chrome Inspector, FireBug, etc.), it is virtually impossible to execute Javascript with `eval()` that will remain hidden from a somewhat competent user.
 
 There are additional factors in place that will hinder the most tenacious inspectors.
 
-##Demo
+## Demo
 
 [Encryptscript](http://kevinselwyn.com/Encryptscript/)
 
-##Usage
+## Usage
 
 Include the script in your document:
 
@@ -28,7 +28,7 @@ The script will look for all Encryptscript files included the following way:
 <script type="application/encryptscript" src="path/to/hello.es"></script>
 ```
 
-##Security
+## Security
 
 On its own, including the script with the syntax above is not enough to execute the Encryptscript.
 
@@ -43,13 +43,13 @@ document.cookie="key=0102030405060708090a0b0c0d0e0f10";
 document.cookie="iv=0102030405060708090a0b0c0d0e0f10";
 ```
 
-##Options
+## Options
 
 You can use the `async` attribute on the Encryptscript `<script>` tag to execute asynchronously.
 
 If this attribute is not set, the scripts will queue one after the other.
 
-##Format
+## Format
 
 The Encryptscript format is just normal Javascript that has been encrypted with AES-128-CBC and converted to Base64.
 
@@ -80,18 +80,18 @@ Then you can use `openssl_encrypt()` to encrypt your Javascript.
 
 (Note: There is no need to Base64 encode the result of `openssl_encrypt()` because it outputs in Base64 by default)
 
-##Dependencies
+## Dependencies
 
 Encryptscript depends on [JES](https://github.com/kevinselwyn/JES) for AES decryption.
 
-##Support
+## Support
 
-*	IE8+
-*	Chrome
-*	Firefox
-*	Safari
-*	Opera
+* IE8+
+* Chrome
+* Firefox
+* Safari
+* Opera
 
-##Is this really secure?
+## Is this really secure?
 
 No, silly. Don't use this in production.
